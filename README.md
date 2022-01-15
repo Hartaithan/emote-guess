@@ -1,2 +1,1 @@
-"# emote-guess" 
-"# emote-guess" 
+"# emote-guess"
