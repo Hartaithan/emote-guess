@@ -8,6 +8,7 @@ function App() {
   const [emotes, setEmotes] = React.useState([]);
   const [guess, setGuess] = React.useState<any>(null);
   const [variants, setVariants] = React.useState<any>(null);
+  const [points, setPoints] = React.useState(0);
   let alreadyPicked: any = [];
 
   React.useEffect(() => {
@@ -63,6 +64,7 @@ function App() {
   function guessVariant(code: string) {
     if (guess.emote.code === code) {
       console.info("RIGHT!");
+      setPoints(points + 1);
     } else {
       console.info("WRONG!");
     }
@@ -71,6 +73,7 @@ function App() {
 
   return (
     <div className="App">
+      <p>{points}</p>
       {guess ? (
         <>
           <img src={`${CDN}/${guess.emote.id}/3x`} alt={guess.emote.code} />
