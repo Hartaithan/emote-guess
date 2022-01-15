@@ -41,10 +41,18 @@ function App() {
           variants.push(variantPretendent);
         }
       }
-      console.log("variants", variants);
       setVariants(variants);
       setGuess(guessPretendent);
     }
+  }
+
+  function guessVariant(code: string) {
+    if (guess.emote.code === code) {
+      console.info("RIGHT!");
+    } else {
+      console.info("WRONG!");
+    }
+    pickGuess(emotes);
   }
 
   return (
@@ -54,7 +62,9 @@ function App() {
           <img src={`${CDN}/${guess.emote.id}/3x`} alt={guess.emote.code} />
           <div>
             {variants.map((variant: any) => (
-              <button>{variant.emote.code}</button>
+              <button onClick={() => guessVariant(variant.emote.code)}>
+                {variant.emote.code}
+              </button>
             ))}
           </div>
         </>
