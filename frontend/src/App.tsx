@@ -95,6 +95,7 @@ function App() {
               <button
                 className="variants__item"
                 onClick={() => guessVariant(variant.emote.code)}
+                key={variant.emote.code}
               >
                 {variant.emote.code}
               </button>

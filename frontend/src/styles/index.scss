@@ -3,7 +3,7 @@
   margin: 0;
   box-sizing: border-box;
   color: #f0f4f8;
-  transition: all 0.3s ease-in-out;
+  font-family: "Inter", sans-serif;
 }
 
 html,
@@ -26,6 +26,7 @@ button {
   background: #2e445b;
   border-radius: 5px;
   border: none;
+  transition: all 0.3s ease-in-out;
   &:hover {
     background: #334e68;
   }
@@ -35,6 +36,7 @@ button {
   margin-top: 16px;
   width: 120px;
   height: 120px;
+  transition: all 0.3s ease-in-out;
 }
 
 .variants {
