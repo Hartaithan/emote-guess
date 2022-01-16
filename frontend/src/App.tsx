@@ -10,6 +10,7 @@ function App() {
   const [variants, setVariants] = React.useState<any>(null);
   const [points, setPoints] = React.useState(0);
   const [isLoading, setLoading] = React.useState(true);
+  const [emoteLoading, setEmoteLoading] = React.useState(true);
   let alreadyPicked: any = [];
 
   React.useEffect(() => {
@@ -64,6 +65,7 @@ function App() {
   }
 
   function guessVariant(code: string) {
+    setEmoteLoading(true);
     setLoading(true);
     if (guess.emote.code === code) {
       console.info("RIGHT!");
@@ -83,6 +85,8 @@ function App() {
         <>
           <img
             className="emote"
+            onLoad={() => setEmoteLoading(false)}
+            style={{ opacity: emoteLoading ? "0" : "1" }}
             src={`${CDN}/${guess.emote.id}/3x`}
             alt={guess.emote.code}
           />
