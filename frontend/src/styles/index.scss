@@ -2,6 +2,8 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  color: #f0f4f8;
+  transition: all 0.3s ease-in-out;
 }
 
 html,
@@ -16,4 +18,32 @@ body,
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  background: #1d2025;
+}
+
+button {
+  background: #2e445b;
+  border-radius: 5px;
+  border: none;
+  &:hover {
+    background: #334e68;
+  }
+}
+
+.emote {
+  margin-top: 16px;
+}
+
+.variants {
+  &__wrapper {
+    margin-top: 16px;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr;
+  }
+  &__item {
+    width: 150px;
+    height: 30px;
+  }
 }

@@ -76,15 +76,22 @@ function App() {
 
   return (
     <div className="App">
-      <p>{points}</p>
+      <p className="points">{points}</p>
       {isLoading ? (
-        "Loading"
+        <p className="loading">Loading</p>
       ) : (
         <>
-          <img src={`${CDN}/${guess.emote.id}/3x`} alt={guess.emote.code} />
-          <div>
+          <img
+            className="emote"
+            src={`${CDN}/${guess.emote.id}/3x`}
+            alt={guess.emote.code}
+          />
+          <div className="variants__wrapper">
             {variants.map((variant: any) => (
-              <button onClick={() => guessVariant(variant.emote.code)}>
+              <button
+                className="variants__item"
+                onClick={() => guessVariant(variant.emote.code)}
+              >
                 {variant.emote.code}
               </button>
             ))}
