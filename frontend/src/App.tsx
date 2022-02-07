@@ -41,10 +41,6 @@ function App() {
     return array;
   }
 
-  // React.useEffect(() => {
-  //   console.log(guess);
-  // }, [guess]);
-
   function pickGuess(emotes: any) {
     const randomIndex = getRandNum(emotes.length);
     const guessPretendent = emotes[randomIndex];
